@@ -32,6 +32,29 @@ fun foo(bar: Int = 0, baz: Int = 1, qux: () -> Unit): Int {
     return bar + baz
 }
 
+/**
+ * 后一个参数可以引用前一个参数
+ */
+fun foo1(a: Int, b: Int = a + 2): Int {
+    return a + b
+}
+
+
+/**
+ * 中缀表示法
+ *
+ *
+ * 标有 infix 关键字的函数也可以使用中缀表示法（忽略该调用的点与圆括号）调用。中缀函数必须满足以下要求：
+
+    它们必须是成员函数或扩展函数；
+    它们必须只有一个参数；
+    其参数不得接受可变数量的参数且不能有默认值。
+ */
+infix fun Int.myshl(x: Int): Int {
+    return x+2
+}
+
+
 
 fun main(args: Array<String>) {
     val sum = sum(1, 2)
@@ -42,5 +65,10 @@ fun main(args: Array<String>) {
 
     println(foo(1) { println("hello") }) // 使用默认值 baz = 1
     println(foo { println("hello") }) // 使用两个默认值 bar = 0 与 baz = 1
+
+    println(foo1(2))
+
+
+    println("中缀表示法 "+ (1 myshl 2))
 
 }
