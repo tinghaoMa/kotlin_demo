@@ -10,7 +10,7 @@
  * @author
  *
  */
-package com.demo
+package com.demo.variable
 
 /**
  * 顶层变量
@@ -21,9 +21,9 @@ var X = 0
 
 fun main(args: Array<String>) {
 
-    println("顶层变量--$PI")
+    println("顶层变量--${PI}")
     X += 1
-    println("顶层变量--$X")
+    println("顶层变量--${X}")
 
     /**
      * 一次赋值（只读）的局部变量:

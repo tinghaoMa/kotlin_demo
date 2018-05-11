@@ -1,4 +1,4 @@
-package com.demo
+package com.demo.function
 
 /**
  * 定义函数
