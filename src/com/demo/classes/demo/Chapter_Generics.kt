@@ -1,5 +1,6 @@
 /**
  * 泛型
+ * https://zhuanlan.zhihu.com/p/32583310 in out详解
  * https://www.kotlincn.net/docs/reference/generics.html#%E6%B3%9B%E5%9E%8B
  */
 package com.demo.classes.demo
