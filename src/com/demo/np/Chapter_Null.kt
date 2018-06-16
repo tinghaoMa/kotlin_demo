@@ -66,12 +66,28 @@ fun getStringLength2(obj: Any): Int? {
 }
 
 
-
-
 fun main(args: Array<String>) {
 //    printProduct("6", "7")
 //    printProduct("a", "7")
 //    printProduct("99", "b")
 
-    println(getStringLength2("123123"))
+//    println(getStringLength2("123123"))
+
+
+    val str = "adc"
+    println(str.toIntOrNull())
+
+    //?可空变量类型
+    val a: String? = null
+
+    //!! 两个叹号 告诉编译器不要检查 我一定不为空
+//    val result = a!!.toInt()
+
+    //?.空安全调用符
+    val toInt = a?.toInt()
+    println(toInt)
+
+    //?:Elvis操作符(猫王)
+    var b:Int = a?.toInt()?:-1
+    println(b)
 }
