@@ -46,16 +46,18 @@ fun foo1(a: Int, b: Int = a + 2): Int {
  *
  * 标有 infix 关键字的函数也可以使用中缀表示法（忽略该调用的点与圆括号）调用。中缀函数必须满足以下要求：
 
-    它们必须是成员函数或扩展函数；
-    它们必须只有一个参数；
-    其参数不得接受可变数量的参数且不能有默认值。
+它们必须是成员函数或扩展函数；
+它们必须只有一个参数；
+其参数不得接受可变数量的参数且不能有默认值。
  */
 infix fun Int.myshl(x: Int): Int {
-    return x+2
+    return x + 2
 }
 
 
-
+/**
+ * 不依赖于class类单独存在的函数 叫做 顶层函数
+ */
 fun main(args: Array<String>) {
     val sum = sum(1, 2)
     println("sum  = $sum")
@@ -69,6 +71,23 @@ fun main(args: Array<String>) {
     println(foo1(2))
 
 
-    println("中缀表示法 "+ (1 myshl 2))
+    println("中缀表示法 " + (1 myshl 2))
+
+
+    hello()
+}
+
+
+/**
+ * 嵌套函数
+ */
+fun hello() {
+
+    fun world() {
+        println("world")
+    }
+    println("hello")
+    world()
 
 }
+
