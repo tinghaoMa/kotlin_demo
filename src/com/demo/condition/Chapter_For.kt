@@ -23,4 +23,23 @@ fun main(args: Array<String>) {
     for ((index, value) in array.withIndex()) {
         println("the element at $index is $value")
     }
+
+    //直接输入  str.for 就会提示
+    val str = "adbcd"
+//    for (c in str) {
+//        println(c)
+//    }
+//
+//    for ((index,c) in str.withIndex()) {
+//        println("index =$index   c =$c")
+//    }
+
+//    str.forEach {
+//        println(it)
+//    }
+
+
+    str.forEachIndexed { index, c ->
+        println("index =$index   c =$c")
+    }
 }
