@@ -14,7 +14,11 @@ fun main(args: Array<String>) {
 //    println(result)
 
     val result1 = getResult1(49)
-    println(result1)
+//    println(result1)
+
+
+    val result2 = getResult2(40)
+    println(result2)
 
 
 }
@@ -47,6 +51,30 @@ fun getResult1(age: Int): String {
         }
         else -> {
             return "default"
+        }
+    }
+}
+
+/**
+ * when表达式返回值在最后一行{} lambda表达式也是最后一行为返回值
+ */
+fun getResult2(age: Int): String {
+
+    return when {
+        age == 7 -> {
+            "hello world"
+        }
+        age in 1..100 -> {
+            "good job"
+
+            "aaaa"
+
+            10
+
+            "123"
+        }
+        else -> {
+            "default"
         }
     }
 }
