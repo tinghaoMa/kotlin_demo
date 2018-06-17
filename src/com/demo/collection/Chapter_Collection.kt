@@ -1,7 +1,7 @@
 /**
  * 集合
  */
-package com.demo
+package com.demo.collection
 
 fun main(args: Array<String>) {
     val items = setOf("apple", "banana", "kiwifruit")
