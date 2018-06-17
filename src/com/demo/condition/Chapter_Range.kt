@@ -6,6 +6,40 @@ package com.demo.condition
 
 
 fun main(args: Array<String>) {
+    //定义range 几种写法
+
+    val range1 = 1..100
+    val range2 = 1.rangeTo(100)
+    val range3 = IntRange(1, 100)
+
+    //长整型
+    val range4 = 1L..100L
+    val range5 = 1L.rangeTo(100L)
+    val range6 = LongRange(1, 100)
+
+    //字符型区间
+    val range7 = 'a'..'z'
+    val range8 = 'a'.rangeTo('z')
+    val range9 = CharRange('a', 'z')
+
+    //区间遍历
+
+
+    for ((index,i) in range1.withIndex()) {
+        println("first index = $index  i = $i")
+
+    }
+
+    range1.forEachIndexed { index, i ->
+        println("second index = $index  i = $i")
+
+    }
+
+    range7.forEach {
+        println(it)
+    }
+
+
     //使用 in 运算符来检测某个数字是否在指定区间内
     val x = 10
     val y = 9
