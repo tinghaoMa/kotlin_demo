@@ -11,7 +11,12 @@ package com.demo.condition
  */
 fun main(args: Array<String>) {
     val result = getResult(10)
-    println(result)
+//    println(result)
+
+    val result1 = getResult1(49)
+    println(result1)
+
+
 }
 
 fun getResult(age: Int): String {
@@ -26,5 +31,22 @@ fun getResult(age: Int): String {
             return "仙人"
         }
     }
+}
 
+/**
+ * when不需要参数
+ */
+fun getResult1(age: Int): String {
+
+    when {
+        age == 7 -> {
+            return "hello world"
+        }
+        age in 1..100 -> {
+            return "good job"
+        }
+        else -> {
+            return "default"
+        }
+    }
 }
