@@ -11,12 +11,21 @@ fun main(args: Array<String>) {
     usHuman.ball()
 }
 
+abstract class SuperHuman {
+    abstract fun superMan()
+}
+
+
 /**
+ * 抽象类反应的是事物的本质，只能单继承
+ * 抽象类也可以继承抽象类
+ *
+ *
  * 抽象类 可以含有非抽象的字段和方法
  *
  * 抽象类不需要open关键字
  */
-abstract class Human {
+abstract class Human : SuperHuman() {
     abstract var color: String
     abstract var language: String
     abstract fun eat()
@@ -35,6 +44,10 @@ class ZHHuman : Human() {
         println("吃饭用筷子")
     }
 
+    override fun superMan() {
+        println("我们有黑猫警长")
+    }
+
     override fun ball() {
         println("足球傻子")
     }
@@ -45,6 +58,10 @@ class ZHHuman : Human() {
 class UsHuman : Human() {
     override var color: String = "白色"
     override var language: String = "English"
+
+    override fun superMan() {
+        println("我们有复仇者联盟")
+    }
 
     override fun eat() {
         println("吃饭用刀叉")
