@@ -1,8 +1,8 @@
-package com.demo.obj.a
+package com.demo.obj.b
 
 
 /**
- * 内部类 和java的内部类是一样的 需要依赖外部类环境的对象
+ * 内部类 使用this
  */
 fun main(args: Array<String>) {
     //创建内部类对象
@@ -16,8 +16,10 @@ class OutClass {
     var name = "张三"
 
     inner class InnerClass {
+        var name = "李四"
         fun sayHello() {
-            println("hello $name")
+            println("hello OutClass  name = ${this@OutClass.name}")
+            println("hello InnerClass name = ${this.name}")
         }
     }
 }
