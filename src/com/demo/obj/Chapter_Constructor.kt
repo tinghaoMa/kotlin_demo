@@ -19,16 +19,31 @@ fun main(args: Array<String>) {
 
 }
 
-/**
- * 次级构造函数
- */
+
 class Person(val name: String, var age: Int) {
     var phone = ""
 
+    init {
+        println("执行主构造函数的init方法")
+    }
+
     constructor(name: String, age: Int, phone: String) : this(name, age) {
         this.phone = phone
+        println("执行次级构造函数方法")
     }
 }
+
+
+/**
+ * 次级构造函数
+// */
+//class Person(val name: String, var age: Int) {
+//    var phone = ""
+//
+//    constructor(name: String, age: Int, phone: String) : this(name, age) {
+//        this.phone = phone
+//    }
+//}
 
 
 /**
