@@ -6,22 +6,39 @@ package com.demo.obj
  *
  */
 fun main(args: Array<String>) {
-    val p = Person("李四", 30)
+//    val p = Person("李四", 30)
+//
+//    println(p.name)
+//    println(p.age)
 
-    println(p.name)
-    println(p.age)
 
+    val p1 = Person("王五", 10, "123456")
+    println(p1.name)
+    println(p1.age)
+    println(p1.phone)
 
 }
+
+/**
+ * 次级构造函数
+ */
+class Person(val name: String, var age: Int) {
+    var phone = ""
+
+    constructor(name: String, age: Int, phone: String) : this(name, age) {
+        this.phone = phone
+    }
+}
+
 
 /**
  * 直接在构造字段前面加 var或者val
  *
  * 如果是val的话 相当于隐藏该属性的set方法,不能赋值
  */
-class Person(val name: String, var age: Int) {
-
-}
+//class Person(val name: String, var age: Int) {
+//
+//}
 
 
 //class Person(name:String,age:Int){ //创建的时候就需要修改name和age
