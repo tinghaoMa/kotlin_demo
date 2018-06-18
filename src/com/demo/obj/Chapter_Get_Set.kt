@@ -6,6 +6,7 @@ package com.demo.obj
 fun main(args: Array<String>) {
     val p = Person()
     println(p.name)
+    p.age = 30
     println(p.age)
 }
 
@@ -14,4 +15,10 @@ class Person {
     var name = "张三"//如果只能访问但是不能修改
         private set //私有set方法
     var age = 20
+        set(value) {
+            if (value < 150) {
+//                this.age = value //当age小于150的时候会死循环 一直setAge
+                field = value //field字段表示当前字段
+            }
+        }
 }
