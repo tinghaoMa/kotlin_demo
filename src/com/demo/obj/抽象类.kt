@@ -36,7 +36,7 @@ abstract class Human : SuperHuman() {
 }
 
 
-class ZHHuman : Human() {
+open class ZHHuman : Human() {
     override var color: String = "黄色"
     override var language: String = "中文"
 
