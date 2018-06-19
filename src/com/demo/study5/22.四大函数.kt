@@ -9,7 +9,7 @@ package com.demo.study5
 
 
 fun main(args: Array<String>) {
-    val list: ArrayList<String>? = arrayListOf("张三", "李四", "王二麻")
+    val list: ArrayList<String> = arrayListOf("张三", "李四", "王二麻")
 //    list?.add("范冰冰")
 //    list?.add("李晨")
 //    list?.add("邓超")
@@ -45,8 +45,29 @@ fun main(args: Array<String>) {
         it.add("变形金刚")
         it.add("侏罗纪公园")
     }
+//
+//    list?.forEach {
+//        println(it)
+//    }
 
-    list?.forEach {
+    /*******************************with*******************************/
+
+    /**
+     * with是独立的函数
+     * with函数参数需要接收两个参数
+     * 第一个参数可以接收任意类型
+     * 第二个参数是函数参数 并且这个函数参数是带这个函数接受者的字面值 接收者就是第一个参数
+     * with函数返回值是第二个函数参数的返回值
+     * 相当于let和apply的结合体
+     */
+    with(list
+
+    ) {
+        add("双王")
+        add("四带二")
+    }
+
+    list.forEach {
         println(it)
     }
 }
