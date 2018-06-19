@@ -14,6 +14,8 @@ fun main(args: Array<String>) {
     val a = 10
     val b = 20
 
+    //::add函数的引用
+
     val add = cacl(a, b, ::add)
     println(add)
 
@@ -27,7 +29,9 @@ fun main(args: Array<String>) {
  * 第三个参数是函数类型 说明kotlin里面支持函数作为参数
  */
 fun cacl(a: Int, b: Int, block: (Int, Int) -> Int): Int {
-    val result = block(a, b)
+//    val result = block(a, b)
+
+    val result = block.invoke(a, b)
     return result
 }
 
