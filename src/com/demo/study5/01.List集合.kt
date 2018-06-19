@@ -30,4 +30,23 @@ fun main(args: Array<String>) {
     val list3 = ArrayList<String>()
 
 
+
+    /***************************filter********************************/
+
+    val girls = listOf<Girl>(
+            Girl("小花", 20, "北京"),
+            Girl("大花", 30, "大连"),
+            Girl("小丽", 22, "大连"),
+            Girl("小牧", 31, "上海"))
+
+
+    val dlGirls = girls.filter {
+        it.place == "大连"
+    }
+
+    println(dlGirls)
+
+
 }
+
+data class Girl(var name: String, var age: Int, var place: String)
