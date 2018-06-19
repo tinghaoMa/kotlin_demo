@@ -8,6 +8,9 @@ package com.demo.study4
  *
  * Object 所有的字段都是静态的  方法不是
  * 使用条件：字段不多的时候使用
+ *
+ * kotlin没有static关键字
+ * 怎么控制有的字段是static 有的字段不是static的呢？
  */
 
 fun main(args: Array<String>) {
