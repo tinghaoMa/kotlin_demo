@@ -5,7 +5,7 @@ package com.demo.study4.d
  * @author itck_mth
  * @time 2018/6/19 10:37 AM
  * @class
- * 
+ *
  * 1.字段必须是val
  * 2.by lazy 放在成员变量里面可以单独存在
  * 3.by lazy 返回值是最后一行
