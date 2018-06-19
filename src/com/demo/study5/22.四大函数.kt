@@ -4,7 +4,11 @@ package com.demo.study5
  * @class name：com.demo.study5
  * @author itck_mth
  * @time 2018/6/19 10:29 PM
- * @class describe
+ * @class
+ * 四大函数  除了with之外都是扩展函数
+ *
+ * apply  let run  And with
+ *
  */
 
 
