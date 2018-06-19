@@ -4,9 +4,9 @@ import kotlin.reflect.KProperty
 
 /**
  * @class name：com.demo.study4
- * @anthor itck_mth
+ * @author itck_mth
  * @time 2018/6/19 10:26 AM
- * @class describe 属性委托
+ * @class  属性委托
  */
 
 fun main(args: Array<String>) {
@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     //取钱
     println(son.money)
 
-        
+
 }
 
 class Son {
