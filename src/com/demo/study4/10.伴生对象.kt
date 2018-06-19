@@ -6,7 +6,7 @@ package com.demo.study4.r
  * @time 2018/6/19 11:28 AM
  * @class describe
  *
- * 伴生对象  companion object 控制属性的静态
+ * 伴生对象  companion object 控制属性的静态 只能放到普通类里面
  */
 
 fun main(args: Array<String>) {
