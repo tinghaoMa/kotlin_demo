@@ -48,4 +48,24 @@ fun main(args: Array<String>) {
 
     val hashMapOf = hashMapOf<String, String>()
     val treeMap = TreeMap<String, String>()
+
+
+
+    /***************************flatMap********************************/
+
+    /**
+     * map
+     *
+     * flatmap 把所有集合元素打碎变成一个map
+     */
+
+    var list = listOf(listOf(10, 20), listOf(30, 40), listOf(50, 60))
+
+    var mapList = list.map {
+        println(it)
+    }
+
+    var flatMapList = list.flatMap { it -> it.asIterable() }
+
+    println(flatMapList)
 }
