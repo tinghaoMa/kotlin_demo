@@ -31,7 +31,9 @@ fun main(args: Array<String>) {
         }
         body {
             div {
-
+//                body { //可以访问最外面的HTML作用域 严格限制这个作用域
+//
+//                }
             }
         }
     }
@@ -49,7 +51,6 @@ fun BODY.div(block: () -> Unit) {
     val div = DIV()
     setTag(div)
 }
-
 
 fun html(block: HTML.() -> Unit): HTML {
     val html = HTML()
@@ -80,6 +81,7 @@ class TITLE : Tag("title")
 class DIV : Tag("div")
 
 
+@MYTAG
 open class Tag(var name: String) {
     val list = mutableListOf<Tag>()
 
@@ -97,3 +99,10 @@ open class Tag(var name: String) {
         return sb.toString()
     }
 }
+
+/**
+ * 缩小作用于  定义一个注解 给要缩小作用于的class 加上该注解就可以
+ */
+
+@DslMarker
+annotation class MYTAG
