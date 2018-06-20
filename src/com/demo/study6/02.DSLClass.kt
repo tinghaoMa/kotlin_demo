@@ -8,6 +8,9 @@ package com.demo.study6.dsl
  *
  * 从外层往里层推进
  *
+ *
+ * Person.() -> Unit 相当于在Person class 里面定义了一个函数 所以可以访问Person类里面的字段和方法
+ *
  */
 
 fun main(args: Array<String>) {
@@ -15,17 +18,16 @@ fun main(args: Array<String>) {
     val person = person {
         name = "张三"
         age = 10
-        address = address {
+        address {
             city = "北京"
-            street = "中关村融科"
-            number = 100
+            street = "融科"
+            number = 10
         }
     }
-
     println(person)
 }
 
-
+//Person 域传递
 fun person(block: Person.() -> Unit): Person {
     val person = Person()
     block(person)  //执行block函数
@@ -33,10 +35,11 @@ fun person(block: Person.() -> Unit): Person {
     return person
 }
 
-fun address(block: Address.() -> Unit): Address {
+//扩展函数
+fun Person.address(block: Address.() -> Unit) {
     val address = Address()
     block.invoke(address)
-    return address
+    this.address = address
 }
 
 
