@@ -12,12 +12,12 @@ class SuperMarket {
     /**
      * 买酱油 高阶函数 函数作为参数回调
      */
-    fun buySoy(block: (Soy) -> Unit) {
+    fun buySoy(block: ((Soy) -> Unit)?) {
         Thread {
             Thread.sleep(5000)
             val soy = Soy("海天")
             //返回 soy
-            block(soy)
+            block?.invoke(soy)
         }.start()
     }
 }
