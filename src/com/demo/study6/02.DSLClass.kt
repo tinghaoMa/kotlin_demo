@@ -11,6 +11,9 @@ package com.demo.study6.dsl
  *
  * Person.() -> Unit 相当于在Person class 里面定义了一个函数 所以可以访问Person类里面的字段和方法
  *
+ *
+ * DSL只是解决问题的外部封装  ， DSL更易于理解
+ *
  */
 
 fun main(args: Array<String>) {
@@ -29,17 +32,19 @@ fun main(args: Array<String>) {
 
 //Person 域传递
 fun person(block: Person.() -> Unit): Person {
-    val person = Person()
-    block(person)  //执行block函数
+//    val person = Person()
+//    block(person)  //执行block函数
 //    block.invoke(person)
-    return person
+    return Person().apply(block)
 }
 
 //扩展函数
 fun Person.address(block: Address.() -> Unit) {
-    val address = Address()
-    block.invoke(address)
-    this.address = address
+//    val address = Address()
+//    block.invoke(address)
+//    this.address = address
+
+    this.address=Address().apply(block)
 }
 
 
