@@ -9,21 +9,71 @@ package com.demo.study6
  */
 
 fun main(args: Array<String>) {
-    val html = HTML()
-    val head = HEAD()
-    html.setTag(head)
-    val title = TITLE()
-    head.setTag(title)
-    val body = BODY()
-    html.setTag(body)
-    val div = DIV()
-    body.setTag(div)
-    println(html)
+//    val html = HTML()
+//    val head = HEAD()
+//    html.setTag(head)
+//    val title = TITLE()
+//    head.setTag(title)
+//    val body = BODY()
+//    html.setTag(body)
+//    val div = DIV()
+//    body.setTag(div)
+//    println(html)
+
+
+    val result = html {
+        head {
+
+            title{
+
+            }
+
+        }
+        body {
+            div {
+
+            }
+        }
+    }
+
+    println(result)
 
 }
 
+fun HEAD.title(function: () -> Unit) {
+    val title = TITLE()
+    setTag(title)
+}
+
+fun BODY.div(block: () -> Unit) {
+    val div = DIV()
+    setTag(div)
+}
+
+
+fun html(block: HTML.() -> Unit): HTML {
+    val html = HTML()
+    block.invoke(html)
+    return html
+}
+
+fun HTML.head(block: HEAD.() -> Unit) {
+    val head = HEAD()
+    setTag(head)
+    block.invoke(head)
+}
+
+
+fun HTML.body(block: BODY.() -> Unit) {
+    val body = BODY()
+    setTag(body)
+    block.invoke(body)
+}
+
+
 //HTML标签
 class HTML : Tag("html")
+
 class HEAD : Tag("head")
 class BODY : Tag("body")
 class TITLE : Tag("title")
